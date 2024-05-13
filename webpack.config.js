@@ -118,7 +118,7 @@ module.exports = {
     // 启用热刷新
     hot: true,
     // 监视 html 文件状态
-    watchFiles: ["./src/**/*.html"],
+    watchFiles: ["./src/**/*.html", "./src/**/*.scss"],
     client: {
       // 全屏显示编译错误和警告
       overlay: true,
