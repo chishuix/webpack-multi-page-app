@@ -98,6 +98,12 @@ module.exports = {
   //   }
   // },
 
+  resolve: {
+    alias: {
+      scss: path.resolve(__dirname, './src/common/scss'),
+    },
+  },
+
   // devtool: 'inline-source-map',
 
   devServer: {
