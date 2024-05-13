@@ -4,13 +4,13 @@
 
 ```
 |-- src/
+|   |-- common -- 公共文件
+|       |-- index.js
+|       |-- index.scss
+|       |-- components/ -- 组件文件夹
+|           |-- _header.html
+|           |-- ...
 |   |-- pages/
-|       |-- common -- 公共文件
-|           |-- index.js
-|           |-- index.scss
-|           |-- components/ -- 组件文件夹
-|               |-- _header.html
-|               |-- ...
 |       |-- page-a
 |           |-- index.html
 |           |-- index.css
