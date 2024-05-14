@@ -13,6 +13,7 @@ const getEntry = require("./utils/get-entry");
 const entries = getEntry("./src/pages");
 // 创建 html 模板
 const createHtml = require("./utils/create-html");
+const { exit } = require("process");
 const htmls = createHtml("./src/pages");
 
 module.exports = {
@@ -22,15 +23,16 @@ module.exports = {
   output: {
     clean: true,
     path: path.resolve(__dirname, "./dist"),
-    filename: "[name]/[name].js",
-    publicPath: '/'
+    filename: "assets/[name]-[contenthash:12].js",
+    assetModuleFilename: 'images/[name][ext][query]',
+    publicPath: './'
   },
 
   plugins: [
     ...htmls,
   // 生产模式下提取 css 为独立文件
   ].concat(devMode ? [] : [new MiniCssExtractPlugin({
-    filename: '[name]/[name].css',
+    filename: 'assets/[name]-[contenthash:12].css',
   })]),
 
   module: {
@@ -38,11 +40,10 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/i,
         use: [
-          // {
-          //   loader: MiniCssExtractPlugin.loader,
-          //   options: { publicPath: '../' },
-          // },
-          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          devMode ? "style-loader" : {
+            loader: MiniCssExtractPlugin.loader,
+            options: { publicPath: '../' },
+          },
           "css-loader",
           "postcss-loader",
           "sass-loader"
@@ -60,13 +61,10 @@ module.exports = {
         },
       },
 
-      // {
-      //   test: /\.(svg|png|jpg|jpeg|gif)(\?v=\d+\.\d+\.\d+)?$/i,
-      //   type: 'asset/resource',
-      //   generator: {
-      //     filename: (content) => content.module.context.split('/').pop() + '/[name][ext][query]'
-      //   }
-      // },
+      {
+        test: /\.(svg|png|jpg|jpeg|gif)(\?v=\d+\.\d+\.\d+)?$/i,
+        type: 'asset/resource',
+      },
     ],
   },
 
@@ -78,25 +76,6 @@ module.exports = {
       new CssMinimizerPlugin(),
     ],
   },
-
-  // resolve: {
-  //   extensions: ['.js', '.scss'],
-
-  //   alias: {
-  //     '@': path.resolve(__dirname, './src'),
-  //     'scss': path.resolve(__dirname, './src/scss'),
-  //   }
-  // },
-
-  // resolve: {
-  //   // extensions: ['.js', '.scss'],
-
-  //   alias: {
-  //     '@': path.resolve(__dirname, './src'),
-  //     // 'scss': path.resolve(__dirname, './src/scss'),
-  //     "components": path.resolve(__dirname, "./src/common/components"),
-  //   }
-  // },
 
   resolve: {
     extensions: ['.js', '.scss'],
@@ -118,7 +97,7 @@ module.exports = {
     port: 3773,
     // 启用热刷新
     hot: true,
-    // 监视 html 文件状态
+    // 监视 html scss 文件状态
     watchFiles: ["./src/**/*.html", "./src/**/*.scss"],
     client: {
       // 全屏显示编译错误和警告

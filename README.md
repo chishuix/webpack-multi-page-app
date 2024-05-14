@@ -4,22 +4,27 @@
 
 ```
 |-- src/
-|   |-- common -- 公共文件
+|   |-- common -- 公共目录
 |       |-- index.js
 |       |-- index.scss
 |       |-- components/ -- 公共组件
 |           |-- _header.html
 |           |-- ...
+|       |-- images/ -- 公共图片
 |       |-- scss/ -- 公共样式
 |           |-- _variables.scss
 |           |-- _reboot.scss
 |           |-- ...
 |   |-- pages/
-|       |-- page-a
+|       |-- page-a/ -- 单页目录
+|           |-- images/ -- 单页图片
+|           |-- scss/ -- 单页样式
 |           |-- index.html
 |           |-- index.css
 |           |-- index.js
-|       |-- page-b
+|       |-- page-b/
+|           |-- images/
+|           |-- scss/
 |           |-- index.html
 |           |-- index.css
 |           |-- index.js
