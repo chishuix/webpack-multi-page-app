@@ -25,7 +25,7 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     filename: "assets/[name]-[contenthash:12].js",
     assetModuleFilename: 'images/[name][ext][query]',
-    publicPath: './'
+    publicPath: "/"
   },
 
   plugins: [
@@ -49,7 +49,6 @@ module.exports = {
           "sass-loader"
         ],
       },
-
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
@@ -60,7 +59,6 @@ module.exports = {
           },
         },
       },
-
       {
         test: /\.(svg|png|jpg|jpeg|gif)(\?v=\d+\.\d+\.\d+)?$/i,
         type: 'asset/resource',
@@ -82,6 +80,7 @@ module.exports = {
     alias: {
       scss: path.resolve(__dirname, './src/common/scss'),
       components: path.resolve(__dirname, "./src/common/components"),
+      helpers: path.resolve(__dirname, "./src/helpers"),
     },
   },
 
