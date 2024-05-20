@@ -96,8 +96,8 @@ module.exports = {
     port: 3773,
     // 启用热刷新
     hot: true,
-    // 监视 html scss 文件状态
-    watchFiles: ["./src/**/*.html", "./src/**/*.scss"],
+    // 监视 文件状态
+    watchFiles: ["./src/**/*.html", "./src/**/*.scss", "./src/**/*.js"],
     client: {
       // 全屏显示编译错误和警告
       overlay: true,
