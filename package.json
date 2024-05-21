@@ -30,7 +30,10 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "clipboard": "^2.0.11",
     "normalize.css": "^8.0.1",
-    "remixicon": "^4.2.0"
+    "qrcode": "^1.5.3",
+    "remixicon": "^4.2.0",
+    "swiper": "^11.1.3"
   }
 }
