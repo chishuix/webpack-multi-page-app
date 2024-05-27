@@ -30,6 +30,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "clipboard": "^2.0.11",
     "normalize.css": "^8.0.1",
     "qrcode": "^1.5.3",
