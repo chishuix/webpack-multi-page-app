@@ -79,7 +79,9 @@ module.exports = {
     extensions: ['.js', '.scss'],
     alias: {
       scss: path.resolve(__dirname, './src/common/scss'),
+      scss_m: path.resolve(__dirname, './src/common_m/scss'),
       components: path.resolve(__dirname, "./src/common/components"),
+      components_m: path.resolve(__dirname, "./src/common_m/components"),
       helpers: path.resolve(__dirname, "./src/helpers"),
     },
   },

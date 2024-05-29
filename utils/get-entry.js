@@ -11,6 +11,7 @@ module.exports = function getEntry(path) {
   let entries = {};
   // 添加 common 入口
   entries['common'] = "./src/common/index.js"
+  entries['common_m'] = "./src/common_m/index.js"
   getPath(path).map((item) => {
     entries[item] = `${path}/${item}/index.js`;
   });
