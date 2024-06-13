@@ -23,7 +23,8 @@ module.exports = {
   output: {
     clean: true,
     path: path.resolve(__dirname, "./dist"),
-    filename: "assets/[name]-[contenthash:12].js",
+    // filename: "assets/[name]-[contenthash:12].js",
+    filename: "assets/[name].min.js",
     assetModuleFilename: 'images/[name][ext][query]',
     publicPath: "/"
   },
@@ -32,7 +33,8 @@ module.exports = {
     ...htmls,
   // 生产模式下提取 css 为独立文件
   ].concat(devMode ? [] : [new MiniCssExtractPlugin({
-    filename: 'assets/[name]-[contenthash:12].css',
+    // filename: 'assets/[name]-[contenthash:12].css',
+    filename: 'assets/[name].min.css',
   })]),
 
   module: {
